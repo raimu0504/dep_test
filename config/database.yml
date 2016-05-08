@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: dep_test_production
-  username: dep_test
-  password: <%= ENV['DEP_TEST_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  database: dtest_production
+  username: root
+  password:
+  socket: /var/lib/mysql/mysql.sock
